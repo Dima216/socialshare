@@ -1,5 +1,5 @@
 db.sqlite3
-heroku_project/local_settings.py
+local_settings.py
 *.pyc
 
 # Byte-compiled / optimized / DLL files
