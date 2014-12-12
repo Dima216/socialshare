@@ -3,3 +3,14 @@ body {
   padding-top: 50px;
   padding-bottom: 0px;
 }
+.mount{
+	width:560px;
+	display:inline-block;
+}
+#mount{
+	width:90%;
+	height:90%;
+}
+#share{
+	background-color: #7AE7F5;
+}

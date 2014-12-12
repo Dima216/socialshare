@@ -1,13 +1,13 @@
-from django import forms
 from models import Join
+from django import forms
 
-# This regular form with added fields
+# This is a regular form with added fields
 class EmailForm(forms.Form):
-	name = forms.CharField(required=False)
 	email = forms.EmailField()
+	name = forms.CharField(required=False)
 
-# This model form
+# This is a model fon\rm
 class JoinForm(forms.ModelForm):
 	class Meta:
 		model = Join
-		fields = ['email'                                                                                       ]
+		fields = ['email']

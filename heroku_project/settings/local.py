@@ -48,6 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'heroku_project.middleware.ReferMiddleware',
 )
 
 ROOT_URLCONF = 'heroku_project.urls'
@@ -78,13 +79,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+SHARE_URL = 'http://socialshare.com/?ref='
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static-only')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
