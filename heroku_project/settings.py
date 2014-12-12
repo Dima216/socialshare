@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 TEMPLATE_DIRS = os.path.join(BASE_DIR,'templates')
 
@@ -21,11 +21,14 @@ TEMPLATE_DIRS = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = '1v+gh%9tfz8la=7ait2l=5ask3$qa(avv396pw_(edgni+hwf%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'heroku_project.middleware.ReferMiddleware',
 )
 
 ROOT_URLCONF = 'heroku_project.urls'
@@ -84,7 +88,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static-only')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
@@ -92,4 +96,6 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, 'media')
+    )

@@ -2,10 +2,11 @@ from base import *
 
 try:
 	from local import *
-	live = False
+	# live = False
 except:
-	live = True
+	pass
+# 	live = True
 
-if live:
-	from production import *
-	
+# if live:
+# 	from production import *
+# 	

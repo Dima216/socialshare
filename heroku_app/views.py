@@ -30,7 +30,7 @@ def home(request):
 	except:
 		obj = None
 	
-	print obj
+	# print obj
 
 	if request.method == 'POST':
 		form = JoinForm(request.POST)
