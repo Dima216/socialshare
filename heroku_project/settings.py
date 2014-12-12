@@ -71,7 +71,10 @@ DATABASES = {
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
+dbconfig = dj_database_url.config()
+if dbconfig:
+    DATABASES['default'] =  dbconfig
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
