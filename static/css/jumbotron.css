@@ -1,0 +1,16 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 0px;
+}
+.mount{
+	width:560px;
+	display:inline-block;
+}
+#mount{
+	width:90%;
+	height:90%;
+}
+#share{
+	background-color: #7AE7F5;
+}
